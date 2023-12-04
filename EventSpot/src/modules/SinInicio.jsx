@@ -5,11 +5,11 @@ import Footer from "./Footer";
 function SinInicio() {
   return (
     <div className="w-full h-screen font-['Epilogue']">
-      <div className="w-full h-100 bg-[url('/img/background.jpeg')]">
+      <div className="w-full h-100 bg-[url('static/img/background.jpeg')]">
         <div className="border-b border-shadow w-11/12 m-auto flex flex-row justify-between items-center">
           <Link to="/">
             <img
-              src="/img/logo-definitivo-2.png"
+              src="static/img/logo-definitivo-2.png"
               alt=""
               className="w-30 hover:cursor-pointer"
             />
