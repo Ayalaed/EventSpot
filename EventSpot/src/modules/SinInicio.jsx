@@ -9,7 +9,7 @@ function SinInicio() {
         <div className="border-b border-shadow w-11/12 m-auto flex flex-row justify-between items-center">
           <Link to="/">
             <img
-              src="logo-definitivo-2.png"
+              src="/assets/logo-definitivo-2.png"
               alt=""
               className="w-30 hover:cursor-pointer"
             />
