@@ -5,7 +5,7 @@ import Footer from "./Footer";
 function SinInicio() {
   return (
     <div className="w-full h-screen font-['Epilogue']">
-      <div className="w-full h-100 bg-[url('static/img/background.jpeg')]">
+      <div className="w-full h-100 bg-cover bg-[url('static/img/background.jpeg')]">
         <div className="border-b border-shadow w-11/12 m-auto flex flex-row justify-between items-center">
           <Link to="/">
             <img
@@ -26,7 +26,7 @@ function SinInicio() {
       <div className="flex flex-col">
         <div className="flex flex-col md:flex-row w-full py-10 px-6">
           <div className="w-full md:w-1/2 flex align-center justify-center mb-6 md:mb-0">
-            <img src="./src/static/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
+            <img src="static/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
           </div>
           <div className="w-full md:w-1/2 flex align-center justify-center">
             <div className="flex flex-col gap-10 px-6 md:px-16 text-center">
@@ -66,7 +66,7 @@ function SinInicio() {
             </div>
           </div>
           <div className="w-full md:w-1/2 flex align-center justify-center mb-6 md:mb-0">
-            <img src="./src/static/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
+            <img src="static/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
           </div>
         </div>
         <div className="flex flex-col md:flex-row w-full py-10 px-6">
@@ -162,7 +162,7 @@ function SinInicio() {
             <div className="w-12 h-12 my-14 mx-2 bg-textOrange rounded-[50%]">
               <div className="w-full h-full flex">
                 <img
-                  src="./src/static/img/twitter.svg"
+                  src="static/img/twitter.svg"
                   alt="twitter"
                   className="m-auto hover:scale-150 ease-in duration-300"
                 />
@@ -171,7 +171,7 @@ function SinInicio() {
             <div className="w-12 h-12 my-14 mx-2 bg-textOrange rounded-[50%]">
               <div className="w-full h-full flex">
                 <img
-                  src="./src/static/img/instagram.svg"
+                  src="static/img/instagram.svg"
                   alt="instagram"
                   className="m-auto hover:scale-150 ease-in duration-300"
                 />
