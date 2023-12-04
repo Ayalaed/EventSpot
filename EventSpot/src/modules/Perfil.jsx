@@ -17,7 +17,7 @@ function Perfil() {
         <div className="w-full md:w-1/3 mb-6 md:mb-0 md:flex md:flex-col md:items-center">
           <div className="flex items-center justify-center w-64 h-64 rounded-[50%] overflow-hidden border-2 border-white mx-auto">
             <img
-              src="./src/static/img/bitmap.png"
+              src="/img/bitmap.png"
               alt=""
               className="w-full h-full object-cover"
             />

@@ -28,8 +28,8 @@ function IniciarSesion() {
   return (
     <main className="w-full h-screen font-['Epilogue']">
       <div className="w-full h-full flex flex-row">
-        <div className="w-full bg-[url('./src/static/img/bitmap.png')] bg-cover bg-no-repeat bg-center sm:hidden"></div>
-        <div className="w-full sm:w-full md:w-2/3 bg-[url('./src/static/img/bitmap.png')] bg-cover bg-no-repeat bg-center hidden sm:block"></div>
+        <div className="w-full bg-[url('/img/bitmap.png')] bg-cover bg-no-repeat bg-center sm:hidden"></div>
+        <div className="w-full sm:w-full md:w-2/3 bg-[url('/img/bitmap.png')] bg-cover bg-no-repeat bg-center hidden sm:block"></div>
         <div className="w-full sm:w-full md:w-1/3 bg-darkBlue-BG flex items-center justify-center">
           <div className="relative px-4 sm:px-8 lg:px-24 w-full max-w-md lg:max-w-xl">
             <h1 className="text-4xl font-semibold pb-4 sm:pb-8 text-white text-center">

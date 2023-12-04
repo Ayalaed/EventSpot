@@ -33,13 +33,13 @@ function IniciarSesion() {
   return (
     <main className="w-full h-screen font-['Epilogue']">
       <div className="w-full h-full flex flex-row">
-        <div className="hidden lg:flex lg:w-2/3 bg-[url('./src/static/img/bitmap.png')] bg-cover bg-no-repeat bg-center"></div>
+        <div className="hidden lg:flex lg:w-2/3 bg-[url('/img/bitmap.png')] bg-cover bg-no-repeat bg-center"></div>
 
         <div className="w-full lg:w-1/2 bg-darkBlue-BG">
           <div id="logo" className="w-full flex justify-end">
             <Link to="/">
               <img
-                src="./src/static/img/logo-definitivo-2.png"
+                src="/img/logo-definitivo-2.png"
                 alt=""
                 className="w-36"
               />
@@ -98,7 +98,7 @@ function IniciarSesion() {
             <div className="mb-8 w-full lg:w-3/4 flex items-center justify-center border-shadowBox border rounded-md m-auto">
               <button className="flex items-center justify-center w-full p-2 rounded-md bg-darkBlue-GB">
                 <img
-                  src="./src/static/img/logo-google.svg"
+                  src="/img/logo-google.svg"
                   alt=""
                   className=""
                 />

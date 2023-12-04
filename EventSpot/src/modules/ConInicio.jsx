@@ -20,7 +20,7 @@ function ConInicio() {
     return eventos.map((evento, i) => (
       <div key={i} className="w-full h-97 border border-shadow mb-8">
         <div className="w-full min-h-9/12 h-97 px-4 py-4">
-          <div className="bg-[url('./src/static/img/bitmap.png')] h-[65%] rounded-t-md"></div>
+          <div className="bg-[url('/img/bitmap.png')] h-[65%] rounded-t-md"></div>
           <div className="min-h-[35%] bg-shadowBox rounded-b-md flex w-full flex-col">
             <div className="p-4 my-auto flex flex-col gap-2">
               <h1 className="text-xl font-semibold text-darkBlue-BG overflow-auto max-h-16">
@@ -55,7 +55,7 @@ function ConInicio() {
         <div className="flex flex-row gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-textOrange">
             <img
-              src="./src/static/img/combined-shape-8.svg"
+              src="/img/combined-shape-8.svg"
               alt=""
               className="w-1/2 h-1/2 object-cover"
             />
@@ -99,11 +99,11 @@ function ConInicio() {
 
   return (
     <div className="w-full h-screen font-['Epilogue']">
-      <div className="w-full h-100 bg-[url('./src/static/img/background.jpeg')]">
+      <div className="w-full h-100 bg-[url('/img/background.jpeg')]">
         <div className="border-b border-shadow w-11/12 m-auto flex flex-row">
           <Link to="/">
             <img
-              src="./src/static/img/logo-definitivo-2.png"
+              src="/img/logo-definitivo-2.png"
               alt=""
               className="w-30 hover:cursor-pointer"
             />
@@ -153,7 +153,7 @@ function ConInicio() {
               <Link to="/perfil">
                 <div class="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden border-2 border-white">
                   <img
-                    src="./src/static/img/bitmap.png"
+                    src="/img/bitmap.png"
                     alt=""
                     class="w-full h-full object-cover"
                   />
@@ -214,12 +214,12 @@ function ConInicio() {
           </p>
         </div>
         <div className="flex flex-row pt-10">
-          <div className="bg-[url('./src/static/img/bitmap-2.png')] h-96 w-full bg-cover"></div>
-          <div className="bg-[url('./src/static/img/bitmap-3.png')] h-96 w-full bg-cover"></div>
-          <div className="bg-[url('./src/static/img/bitmap-4.png')] h-96 w-full bg-cover"></div>
-          <div className="bg-[url('./src/static/img/bitmap-5.png')] h-96 w-full bg-cover"></div>
-          <div className="bg-[url('./src/static/img/bitmap-6.png')] h-96 w-full bg-cover"></div>
-          <div className="bg-[url('./src/static/img/bitmap-2.png')] h-96 w-full bg-cover"></div>
+          <div className="bg-[url('/img/bitmap-2.png')] h-96 w-full bg-cover"></div>
+          <div className="bg-[url('/img/bitmap-3.png')] h-96 w-full bg-cover"></div>
+          <div className="bg-[url('/img/bitmap-4.png')] h-96 w-full bg-cover"></div>
+          <div className="bg-[url('/img/bitmap-5.png')] h-96 w-full bg-cover"></div>
+          <div className="bg-[url('/img/bitmap-6.png')] h-96 w-full bg-cover"></div>
+          <div className="bg-[url('/img/bitmap-2.png')] h-96 w-full bg-cover"></div>
         </div>
       </div>
       <div className="flex flex-row py-24 bg-darkBlue-BG mb-[1px]">
@@ -297,7 +297,7 @@ function ConInicio() {
               <div className="flex flex-row gap-6">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-textOrange">
                   <img
-                    src="./src/static/img/shape-2.svg"
+                    src="/img/shape-2.svg"
                     alt=""
                     className="w-1/2 h-1/2 object-cover"
                   />
@@ -309,7 +309,7 @@ function ConInicio() {
               <div className="flex flex-row gap-6">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-textOrange">
                   <img
-                    src="./src/static/img/path.svg"
+                    src="/img/path.svg"
                     alt=""
                     className="w-1/2 h-1/2 object-cover"
                   />
@@ -321,7 +321,7 @@ function ConInicio() {
               <div className="flex flex-row gap-6">
                 <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-textOrange">
                   <img
-                    src="./src/static/img/shape.svg"
+                    src="/img/shape.svg"
                     alt=""
                     className="w-1/2 h-1/2 object-cover"
                   />

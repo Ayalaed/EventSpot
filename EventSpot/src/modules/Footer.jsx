@@ -23,21 +23,21 @@ function Footer() {
         <div className="flex justify-center lg:justify-start mt-6 lg:mt-0">
           <a href="https://facebook.com" className="mx-2">
             <img
-              src="./src/static/img/facebook.svg"
+              src="/img/facebook.svg"
               alt="facebook"
               className="w-8 h-8 lg:w-12 lg:h-12 hover:scale-110 transition transform duration-300"
             />
           </a>
           <a href="https://twitter.com" className="mx-2">
             <img
-              src="./src/static/img/twitter.svg"
+              src="/img/twitter.svg"
               alt="twitter"
               className="w-8 h-8 lg:w-12 lg:h-12 hover:scale-110 transition transform duration-300"
             />
           </a>
           <a href="https://instagram.com" className="mx-2">
             <img
-              src="./src/static/img/instagram.svg"
+              src="/img/instagram.svg"
               alt="instagram"
               className="w-8 h-8 lg:w-12 lg:h-12 hover:scale-110 transition transform duration-300"
             />

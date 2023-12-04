@@ -12,7 +12,7 @@ function Header(props) {
         <div className="border-b border-shadow w-full flex flex-row justify-between items-center p-4">
           <Link to="/">
             <img
-              src="./src/static/img/logo-definitivo-2.png"
+              src="/img/logo-definitivo-2.png"
               alt="Logo"
               className="w-30 h-auto"
             />
@@ -32,7 +32,7 @@ function Header(props) {
             <Link to="/perfil" className="flex items-center justify-center ml-4">
               <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-white">
                 <img
-                  src="./src/static/img/bitmap.png"
+                  src="/img/bitmap.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -50,7 +50,7 @@ function Header(props) {
         <div className="flex items-center justify-between px-4 py-3">
           <Link to="/">
             <img
-              src="./src/static/img/logo-definitivo-2.png"
+              src="/img/logo-definitivo-2.png"
               alt="Logo"
               className="w-20 h-auto"
             />

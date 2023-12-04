@@ -66,7 +66,7 @@ function SinInicio() {
             </div>
           </div>
           <div className="w-full md:w-1/2 flex align-center justify-center mb-6 md:mb-0">
-            <img src="/static/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
+            <img src="/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
           </div>
         </div>
         <div className="flex flex-col md:flex-row w-full py-10 px-6">
@@ -153,7 +153,7 @@ function SinInicio() {
             <div className="w-12 h-12 my-14 mx-2 bg-textOrange rounded-[50%]">
               <div className="w-full h-full flex">
                 <img
-                  src="/static/img/facebook.svg"
+                  src="/img/facebook.svg"
                   alt="facebook"
                   className="m-auto hover:scale-150 ease-in duration-300"
                 />
@@ -162,7 +162,7 @@ function SinInicio() {
             <div className="w-12 h-12 my-14 mx-2 bg-textOrange rounded-[50%]">
               <div className="w-full h-full flex">
                 <img
-                  src="/static/img/twitter.svg"
+                  src="/img/twitter.svg"
                   alt="twitter"
                   className="m-auto hover:scale-150 ease-in duration-300"
                 />
@@ -171,7 +171,7 @@ function SinInicio() {
             <div className="w-12 h-12 my-14 mx-2 bg-textOrange rounded-[50%]">
               <div className="w-full h-full flex">
                 <img
-                  src="/static/img/instagram.svg"
+                  src="/img/instagram.svg"
                   alt="instagram"
                   className="m-auto hover:scale-150 ease-in duration-300"
                 />

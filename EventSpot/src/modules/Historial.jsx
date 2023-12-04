@@ -63,7 +63,7 @@ function Historial() {
               <div className="h-full border border-shadow">
                 <div
                   className="min-h-[200px] bg-cover bg-center"
-                  style={{ backgroundImage: `url('./src/static/img/bitmap.png')` }}
+                  style={{ backgroundImage: `url('/img/bitmap.png')` }}
                 ></div>
                 <div className="min-h-[35%] bg-shadowBox rounded-b-md flex w-full flex-col">
                   <div className="p-4 my-auto flex flex-col gap-2">
