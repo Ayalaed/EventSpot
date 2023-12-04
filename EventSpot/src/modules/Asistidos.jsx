@@ -28,7 +28,7 @@ function Asistidos() {
           {eventosAsistidos.map((evento) => (
             <div key={evento.id} className="w-full h-97 border border-shadow">
               <div className="w-full min-h-9/12 h-97 px-4 py-4">
-                <div className="bg-[url('./src/static/img/bitmap.png')] h-[65%] rounded-t-md"></div>
+                <div className="bg-[url('/img/bitmap.png')] h-[65%] rounded-t-md"></div>
                 <div className="min-h-[35%] bg-shadowBox rounded-b-md flex w-full flex-col">
                   <div className="p-4 my-auto flex flex-col gap-2">
                     <h1 className="text-xl font-semibold text-darkBlue-BG overflow-auto max-h-16">
