@@ -26,7 +26,7 @@ function SinInicio() {
       <div className="flex flex-col">
         <div className="flex flex-col md:flex-row w-full py-10 px-6">
           <div className="w-full md:w-1/2 flex align-center justify-center mb-6 md:mb-0">
-            <img src="img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
+            <img src="./src/static/img/bgbit.png" alt="bitmap.png" className="max-w-full h-auto" />
           </div>
           <div className="w-full md:w-1/2 flex align-center justify-center">
             <div className="flex flex-col gap-10 px-6 md:px-16 text-center">
