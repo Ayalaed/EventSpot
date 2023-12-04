@@ -8,11 +8,11 @@ function IniciarSesion() {
   const [date, setDate] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const baseUrl=import.meta.env.VITE_API_URL;
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3001/register", {
+      .post(`${baseUrl}/register`, {
         carnet,
         nombreApellido: name,
         nacimiento: date,

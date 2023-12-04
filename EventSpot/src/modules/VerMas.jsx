@@ -12,14 +12,16 @@ function VerMas() {
   const [evento, setEvento] = useState([]);
   const handleClick = () => {
     setIsExpanded((prevValue) => !prevValue);
+
   };
   const headerData = {
     title: "",
   };
+  const baseUrl=import.meta.env.VITE_API_URL
   useEffect(() => {
     // Realizar la solicitud al servidor Express para obtener el evento específico por ID
     axios
-      .get(`http://localhost:3001/eventos/${id}`)
+      .get(`${baseUrl}/eventos/${id}`)
       .then((response) => {
         setEvento(response.data);
       })

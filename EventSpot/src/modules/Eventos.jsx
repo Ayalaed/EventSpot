@@ -10,10 +10,11 @@ function Eventos() {
   };
 
   const [eventos, setEventos] = useState([]);
+  const baseUrl=import.meta.env.VITE_API_URL
 
   useEffect(() => {
     // Realizar la solicitud al servidor Express para obtener eventos
-    axios.get("http://localhost:3001/eventos")
+    axios.get(`${baseUrl}/eventos`)
       .then((response) => {
         setEventos(response.data);
       })

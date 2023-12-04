@@ -6,10 +6,10 @@ import "./IniciarSesion.css";
 function IniciarSesion() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState();
-
+  const baseUrl=import.meta.env.VITE_API_URL
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post("http://localhost:3001/login", { email, password }).then((result) => {
+    axios.post(`${baseUrl}/login`, { email, password }).then((result) => {
       if (result.data.status === "success") {
         const { carnet, nombreApellido, email, nacimiento, pass } = result.data;
 
