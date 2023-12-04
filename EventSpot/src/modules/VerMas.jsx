@@ -10,59 +10,16 @@ function VerMas() {
   const [eventofinalizado, setEventofinalizado] = useState(true);
   const [isExpanded, setIsExpanded] = useState(false);
   const [evento, setEvento] = useState([]);
-  const [inscrito, setInscrito] = useState(false);
-  const [cuposDisponibles, setCuposDisponibles] = useState(30);
-  const [fechaEvento, setFechaEvento] = useState("28/09/2023");
-
   const handleClick = () => {
     setIsExpanded((prevValue) => !prevValue);
   };
-
-  const handleInscripcion = () => {
-    if (inscrito) {
-      setCuposDisponibles((prevCupos) => prevCupos + 1);
-      setInscrito(false);
-    } else {
-      if (cuposDisponibles > 0) {
-        setCuposDisponibles((prevCupos) => prevCupos - 1);
-        setInscrito(true);
-
-        const historial = JSON.parse(localStorage.getItem('historial')) || [];
-        const eventoActual = {
-          id: Date.now(),
-          nombre: evento.nombre,
-          fecha: evento.fecha,
-        };
-        historial.push(eventoActual);
-        localStorage.setItem('historial', JSON.stringify(historial));
-      } else {
-        alert('No hay cupos disponibles');
-      }
-    }
+  const headerData = {
+    title: "",
   };
-
-  const handleAgregarFavorito = () => {
-    const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-    const eventoActual = {
-      id: Date.now(),
-      nombre: evento.nombre,
-      fecha: evento.fecha,
-      hora: evento.hora,
-    };
-
-    const eventoExistente = favoritos.find((e) => e.id === eventoActual.id);
-
-    if (!eventoExistente) {
-      favoritos.push(eventoActual);
-      localStorage.setItem('favoritos', JSON.stringify(favoritos));
-      alert('Evento agregado a favoritos');
-    } else {
-      alert('El evento ya está en favoritos');
-    }
-  };
-
   useEffect(() => {
-    axios.get(`http://localhost:3001/eventos/${id}`)
+    // Realizar la solicitud al servidor Express para obtener el evento específico por ID
+    axios
+      .get(`http://localhost:3001/eventos/${id}`)
       .then((response) => {
         setEvento(response.data);
       })
@@ -72,7 +29,10 @@ function VerMas() {
   }, [id]);
 
   function imprimirParrafos(texto) {
+    // Dividir el texto en párrafos utilizando el punto y aparte como delimitador
     var parrafos = texto.split("\n");
+
+    // Filtrar párrafos vacíos y mapear a elementos <p>
     return parrafos
       .filter((parrafo) => parrafo.trim() !== "")
       .map((parrafo, index) => (
@@ -85,7 +45,7 @@ function VerMas() {
   return (
     <div className="h-screen font-['Epilogue']">
       <div>
-        <Header title="" />
+        <Header title={headerData.title} />
       </div>
       <div className="w-4/5 m-auto flex flex-col py-10">
         <div className="flex flex-col gap-8">
@@ -95,10 +55,11 @@ function VerMas() {
           {imprimirParrafos(evento.descripcion || "Descripción del evento")}
           <div className="flex flex-col gap-4">
             <div className="flex flex-row">
-              <h1 className="w-full text-xl font-[600] m-auto ">
+              <h1 className="w-full text-xl font-[600] m-auto">
                 Fecha del evento:{" "}
                 <span className="font-[400] text-textOrange">
-                  {evento?.fecha || "Fecha no disponible"} | {evento.hora || "Hora no disponible"}
+                  {evento?.fecha || "Fecha no disponible"} |{" "}
+                  {evento.hora || "Hora no disponible"}
                 </span>
               </h1>
               <h1 className="w-full text-xl text-center font-[600] m-auto">
@@ -108,26 +69,23 @@ function VerMas() {
             <div className="flex flex-row">
               <h1 className="w-full text-xl font-[600] m-auto">
                 Cupos disponibles:{" "}
-                <span className="font-[400] text-textOrange">{cuposDisponibles}</span>
+                <span className="font-[400] text-textOrange">
+                  {evento.cupos || "Cupos no disponibles"}
+                </span>
               </h1>
               <h1 className="w-full text-center m-auto">
-                <CalificacionEstrellas eventofinalizado={eventofinalizado} />
+                <CalificacionEstrellas eventofinalizado={false} />
               </h1>
             </div>
-            <div className="flex flex-row w-1/4 gap-4 pt-4">
-              <div className="m-auto mr-0 uppercase rounded-md w-4/5 bg-green-700 hover:rounded-md">
-                <p
-                  className={`text-sm tracking-widest text-center text-white px-4 py-3 font-[400] ${
-                    inscrito ? 'bg-red-500' : 'hover:bg-green-700 hover:cursor-pointer'
-                  }`}
-                  onClick={handleInscripcion}
-                >
-                  {inscrito ? 'DESINSCRIBIRSE' : 'INSCRIBIRSE'}
+            <div className="flex flex-row w-4/5 gap-4 pt-4">
+              <div className="m-auto uppercase rounded-md w-full bg-green-700 hover:rounded-md">
+                <p className="text-sm tracking-widest text-center text-white px-4 py-3 hover:cursor-pointer hover:rounded-md hover:text-darkBlue-BG hover:bg-green-700 font-[400] hover:font-[400]">
+                  INSCRIBIRSE
                 </p>
               </div>
               <div
                 className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-darkBlue-BG"
-                onClick={handleAgregarFavorito}
+                onClick={handleClick}
               >
                 <ion-icon
                   name={isExpanded ? "bookmark" : "bookmark-outline"}

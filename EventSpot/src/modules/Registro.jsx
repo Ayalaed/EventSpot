@@ -4,8 +4,8 @@ import axios from "axios";
 
 function IniciarSesion() {
   const [carnet, setCarnet] = useState("");
-  const [nombreApellido, setNombreApellido] = useState("");
-  const [nacimiento, setNacimiento] = useState("");
+  const [name, setName] = useState("");
+  const [date, setDate] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,13 +14,13 @@ function IniciarSesion() {
     axios
       .post("http://localhost:3001/register", {
         carnet,
-        nombreApellido,
-        nacimiento,
+        nombreApellido: name,
+        nacimiento: date,
         email,
         password,
       })
       .then((result) => {
-        console.log(result.data); // Asegúrate de que esto imprima el contenido recibido desde el servidor
+        console.log(result.data);
         window.location.href = "/iniciar-sesion";
       });
   };
@@ -28,24 +28,16 @@ function IniciarSesion() {
   return (
     <main className="w-full h-screen font-['Epilogue']">
       <div className="w-full h-full flex flex-row">
-        <div className="w-full bg-[url('./src/static/img/bitmap.png')] bg-cover bg-no-repeat bg-center"></div>
-        <div className="w-10/12 bg-darkBlue-BG">
-          <div id="logo" className="w-full flex flex-row-reverse">
-            <Link to="/">
-              <img
-                src="./src/static/img/logo-definitivo-2.png"
-                alt=""
-                className="w-36 right-0 "
-              />
-            </Link>
-          </div>
-          <div className="relative px-24">
-            <h1 className="text-4xl font-semibold pb-4 text-white">
-              Regístrate!
+        <div className="w-full bg-[url('./src/static/img/bitmap.png')] bg-cover bg-no-repeat bg-center sm:hidden"></div>
+        <div className="w-full sm:w-full md:w-2/3 bg-[url('./src/static/img/bitmap.png')] bg-cover bg-no-repeat bg-center hidden sm:block"></div>
+        <div className="w-full sm:w-full md:w-1/3 bg-darkBlue-BG flex items-center justify-center">
+          <div className="relative px-4 sm:px-8 lg:px-24 w-full max-w-md lg:max-w-xl">
+            <h1 className="text-4xl font-semibold pb-4 sm:pb-8 text-white text-center">
+              Registrate!
             </h1>
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="w-full">
               <div>
-                <label htmlFor="email" className="text-xl text-textOrange">
+                <label htmlFor="carnet" className="text-xl text-textOrange">
                   Carnet:
                 </label>
                 <br />
@@ -61,7 +53,7 @@ function IniciarSesion() {
               <div className="mt-4">
                 <div className="flex flex-row items-end">
                   <label
-                    htmlFor="password"
+                    htmlFor="name"
                     className="text-xl text-textOrange "
                   >
                     Nombre y apellidos
@@ -72,14 +64,14 @@ function IniciarSesion() {
                   name="name"
                   id="name"
                   placeholder="Ingresa tu nombre y tus dos apellidos"
-                  onChange={(e) => setNombreApellido(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                   className="w-full p-2 rounded-md bg-stroke text-white"
                 />
               </div>
               <div className="mt-4">
                 <div className="flex flex-row items-end">
                   <label
-                    htmlFor="password"
+                    htmlFor="date"
                     className="text-xl text-textOrange "
                   >
                     Fecha de nacimiento
@@ -90,14 +82,14 @@ function IniciarSesion() {
                   name="date"
                   id="date"
                   placeholder="Ingresa tu fecha de nacimiento"
-                  onChange={(e) => setNacimiento(e.target.value)}
+                  onChange={(e) => setDate(e.target.value)}
                   className="w-full p-2 rounded-md bg-stroke text-white"
                 />
               </div>
               <div className="mt-4">
                 <div className="flex flex-row items-end">
                   <label
-                    htmlFor="password"
+                    htmlFor="email"
                     className="text-xl text-textOrange "
                   >
                     Email
@@ -135,7 +127,7 @@ function IniciarSesion() {
                   type="submit"
                   name="IniciarSesion"
                   id="IniciarSesion"
-                  placeholder="Iniciar Sesión"
+                  value="Iniciar Sesión"
                   className="w-full p-2 rounded-md bg-shadowBox text-textOrange hover:cursor-pointer text-md"
                 />
               </div>

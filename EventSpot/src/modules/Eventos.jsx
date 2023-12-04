@@ -24,9 +24,12 @@ function Eventos() {
 
   const renderEventos = () => {
     return eventos.map((evento) => (
-      <div key={evento._id} className="w-full h-97 border border-shadow">
-        <div className="w-full min-h-9/12 h-97 px-4 py-4">
-          <div className="bg-[url('./src/static/img/bitmap.png')] h-[65%] rounded-t-md"></div>
+      <div key={evento._id} className="w-full md:w-1/2 lg:w-full p-4">
+        <div className="h-full border border-shadow">
+          <div
+            className="min-h-[200px] bg-cover bg-center"
+            style={{ backgroundImage: `url('./src/static/img/bitmap.png')` }}
+          ></div>
           <div className="min-h-[35%] bg-shadowBox rounded-b-md flex w-full flex-col">
             <div className="p-4 my-auto flex flex-col gap-2">
               <h1 className="text-xl font-semibold text-darkBlue-BG overflow-auto max-h-16">
@@ -37,7 +40,7 @@ function Eventos() {
                 <input
                   type="submit"
                   value="Ver más"
-                  className="hover:cursor-pointer bg-darkBlue-BG py-2 px-4 text-white text-md rounded-md hover:text-textOrange font-[400] w-1/4"
+                  className="hover:cursor-pointer bg-darkBlue-BG py-2 px-4 text-white text-md rounded-md hover:text-textOrange font-[400] w-full"
                 />
               </Link>
             </div>
@@ -53,18 +56,18 @@ function Eventos() {
         <Header title={headerData.title} />
       </div>
       <div className="w-full font-['Epilogue'] py-10">
-        <form action="" method="" className="flex flex-row w-full px-6">
+        <form action="" method="" className="flex flex-row flex-wrap w-full px-6">
           <input
             type="text"
             name="NombreEvento"
             id=""
             value="Nombre del evento"
-            className="mr-10 pl-4 bg-shadowBox w-1/3 py-2 rounded-md border border-b-darkBlue-BG"
+            className="mb-4 md:mb-0 md:mr-4 pl-4 bg-shadowBox w-full md:w-1/3 lg:w-1/5 py-2 rounded-md border border-b-darkBlue-BG"
           />
           <select
             name="Carrera"
             id=""
-            className="mr-10 pl-4 bg-shadowBox w-1/5 py-2 rounded-md border border-b-darkBlue-BG"
+            className="mb-4 md:mb-0 md:mr-4 pl-4 bg-shadowBox w-full md:w-1/3 lg:w-1/5 py-2 rounded-md border border-b-darkBlue-BG"
           >
             <option value="Carrera" selected>
               Carrera
@@ -76,11 +79,13 @@ function Eventos() {
             type="submit"
             name="buscar"
             value="Buscar"
-            className="bg-darkBlue-BG px-10 py-2 rounded-md text-white"
+            className="bg-darkBlue-BG px-8 py-2 rounded-md text-white w-full md:w-auto"
           />
         </form>
         {/* Primera fila */}
-        <div className="w-full grid grid-cols-3 py-12">{renderEventos()}</div>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 px-6">
+          {renderEventos()}
+        </div>
       </div>
       <Footer />
     </div>

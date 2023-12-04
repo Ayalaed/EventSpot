@@ -1,4 +1,3 @@
-// Favoritos.jsx
 import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
@@ -24,7 +23,7 @@ function Favoritos() {
       <div>
         <Header title="Favoritos" />
       </div>
-      <div className="w-4/5 m-auto flex flex-col py-10">
+      <div className="w-full md:w-4/5 lg:w-4/5 xl:w-3/5 mx-auto flex flex-col py-10">
         {favoritos.length === 0 ? (
           <p className="text-center text-xl">No tienes eventos en favoritos.</p>
         ) : (

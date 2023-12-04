@@ -15,36 +15,34 @@ function ConInicio() {
     "656ab2bdbe5a625ad47aedf7",
     "656ab2bdbe5a625ad47aedf8",
   ];
+
   const renderBoxes = () => {
-    const boxes = [];
-    for (let i = 0; i <= 2; i++) {
-      boxes.push(
-        <div key={i} className="w-full h-97 border border-shadow">
-          <div className="w-full min-h-9/12 h-97 px-4 py-4">
-            <div className="bg-[url('./src/static/img/bitmap.png')] h-[65%] rounded-t-md"></div>
-            <div className="min-h-[35%] bg-shadowBox rounded-b-md flex w-full flex-col">
-              <div className="p-4 my-auto flex flex-col gap-2">
-                <h1 className="text-xl font-semibold text-darkBlue-BG overflow-auto max-h-16">
-                  {eventos[i]}
-                </h1>
-                <h2 className="text-lg text-textOrange">
-                  {fecha[i]} | {hora[i]}
-                </h2>
-                <Link to={`/ver-mas/${id[i]}`}>
-                  <input
-                    type="submit"
-                    value="Ver más"
-                    className="hover:cursor-pointer bg-darkBlue-BG py-2 px-4 text-white text-md rounded-md hover:text-textOrange font-[400] w-1/4"
-                  />
-                </Link>
-              </div>
+    return eventos.map((evento, i) => (
+      <div key={i} className="w-full h-97 border border-shadow mb-8">
+        <div className="w-full min-h-9/12 h-97 px-4 py-4">
+          <div className="bg-[url('./src/static/img/bitmap.png')] h-[65%] rounded-t-md"></div>
+          <div className="min-h-[35%] bg-shadowBox rounded-b-md flex w-full flex-col">
+            <div className="p-4 my-auto flex flex-col gap-2">
+              <h1 className="text-xl font-semibold text-darkBlue-BG overflow-auto max-h-16">
+                {evento}
+              </h1>
+              <h2 className="text-lg text-textOrange">
+                {fecha[i]} | {hora[i]}
+              </h2>
+              <Link to={`/ver-mas/${id[i]}`}>
+                <input
+                  type="submit"
+                  value="Ver más"
+                  className="hover:cursor-pointer bg-darkBlue-BG py-2 px-4 text-white text-md rounded-md hover:text-textOrange font-[400] w-1/4"
+                />
+              </Link>
             </div>
           </div>
         </div>
-      );
-    }
-    return boxes;
+      </div>
+    ));
   };
+
   function EventComponent({ eventNumber }) {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -53,7 +51,7 @@ function ConInicio() {
     };
 
     return (
-      <div className="flex flex-col border p-4 bg-white rounded-md">
+      <div className="flex flex-col border p-4 bg-white rounded-md mb-8">
         <div className="flex flex-row gap-4">
           <div className="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden bg-textOrange">
             <img
@@ -69,10 +67,7 @@ function ConInicio() {
         <div className="flex flex-col py-4">
           <p>Competencia de Programación</p>
           <ul className="px-2 pt-3 pb-1">
-            <li>
-              * Demuestra tus habilidades en una competencia de programación
-              intensa.
-            </li>
+            <li>* Demuestra tus habilidades en una competencia de programación intensa.</li>
             <li>* 2023-05-20 | 16:00</li>
           </ul>
         </div>
@@ -97,84 +92,80 @@ function ConInicio() {
   }
 
   const renderEvents = () => {
-    const events = [];
-    for (let i = 1; i <= 2; i++) {
-      events.push(<EventComponent key={i} eventNumber={i} />);
-    }
-    return events;
+    return Array.from({ length: 2 }, (_, i) => (
+      <EventComponent key={i} eventNumber={i + 1} />
+    ));
   };
 
   return (
     <div className="w-full h-screen font-['Epilogue']">
-      <div className="">
-        <div className="w-full h-100 bg-[url('./src/static/img/background.jpeg')]">
-          <div className="border-b border-shadow w-11/12 m-auto flex flex-row">
-            <Link to="/">
-              <img
-                src="./src/static/img/logo-definitivo-2.png"
-                alt=""
-                className="w-30 hover:cursor-pointer"
-              />
-            </Link>
-            <div className="m-auto mr-0 uppercase rounded-md flex flex-row">
-              <Link to="/" className="m-auto">
-                <p className="m-auto text-sm text-black px-8 py-3 hover:cursor-pointer hover:underline">
-                  Inicio
-                </p>
-              </Link>
-              <Link to="/eventos" className="m-auto">
-                <p className="m-auto text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
-                  Eventos
-                </p>
-              </Link>
-              <Link to="/favoritos" className="m-auto">
-                <p className="m-auto text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
-                  Favoritos
-                </p>
-              </Link>
-              <Link to="/historial" className="m-auto">
-                <p className="m-auto text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
-                  Historial
-                </p>
-              </Link>
-              <Link to="/asistidos" className="m-auto">
-                <p className="text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
-                  Asistidos
-                </p>
-              </Link>
-              <p
-                className="text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline m-auto"
-                onClick={() => {
-                  localStorage.setItem("showHome", "false");
-                  window.location.href = "/";
-                }}
-              >
-                Cerrar Sesión
+      <div className="w-full h-100 bg-[url('./src/static/img/background.jpeg')]">
+        <div className="border-b border-shadow w-11/12 m-auto flex flex-row">
+          <Link to="/">
+            <img
+              src="./src/static/img/logo-definitivo-2.png"
+              alt=""
+              className="w-30 hover:cursor-pointer"
+            />
+          </Link>
+          <div className="m-auto mr-0 uppercase rounded-md flex flex-row">
+            <Link to="/" className="m-auto">
+              <p className="m-auto text-sm text-black px-8 py-3 hover:cursor-pointer hover:underline">
+                Inicio
               </p>
-              <div className="flex flex-row">
-                <div className="flex flex-col mx-6 text-center">
-                  <p className="font-semibold text-black">
-                    {localStorage.getItem("user")}
-                  </p>
-                  <p className="text-black">{localStorage.getItem("carnet")}</p>
-                </div>
-                <Link to="/perfil">
-                  <div class="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden border-2 border-white">
-                    <img
-                      src="./src/static/img/bitmap.png"
-                      alt=""
-                      class="w-full h-full object-cover"
-                    />
-                  </div>
-                </Link>
+            </Link>
+            <Link to="/eventos" className="m-auto">
+              <p className="m-auto text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
+                Eventos
+              </p>
+            </Link>
+            <Link to="/favoritos" className="m-auto">
+              <p className="m-auto text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
+                Favoritos
+              </p>
+            </Link>
+            <Link to="/historial" className="m-auto">
+              <p className="m-auto text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
+                Historial
+              </p>
+            </Link>
+            <Link to="/asistidos" className="m-auto">
+              <p className="text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline">
+                Asistidos
+              </p>
+            </Link>
+            <p
+              className="text-sm text-black px-10 py-3 hover:cursor-pointer hover:underline m-auto"
+              onClick={() => {
+                localStorage.setItem("showHome", "false");
+                window.location.href = "/";
+              }}
+            >
+              Cerrar Sesión
+            </p>
+            <div className="flex flex-row">
+              <div className="flex flex-col mx-6 text-center">
+                <p className="font-semibold text-black">
+                  {localStorage.getItem("user")}
+                </p>
+                <p className="text-black">{localStorage.getItem("carnet")}</p>
               </div>
+              <Link to="/perfil">
+                <div class="flex items-center justify-center w-12 h-12 rounded-full overflow-hidden border-2 border-white">
+                  <img
+                    src="./src/static/img/bitmap.png"
+                    alt=""
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+              </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="flex flex-col py-10 px-6">
-        <div className="w-full flex align-cener justify-center">
-          <div className="flex flex-col gap-10 px-16 align-cener justify-center">
+        <div className="w-full flex align-center justify-center">
+          <div className="flex flex-col gap-10 px-16 align-center justify-center">
             <h3 className="text-md text-textOrange text-center uppercase">
               Eventos recomendados
             </h3>
@@ -186,7 +177,7 @@ function ConInicio() {
         </div>
       </div>
       <div className="flex flex-col py-10 bg-darkBlue-BG">
-        <div className="flex flex-col px-16 align-cener justify-center py-6 w-4/5 m-auto">
+        <div className="flex flex-col px-16 align-center justify-center py-6 w-4/5 m-auto">
           <h3 className="text-md text-textOrange text-left uppercase py-2">
             Nuestro eventos
           </h3>

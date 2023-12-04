@@ -24,7 +24,7 @@ function Asistidos() {
       </div>
       <div className="w-full font-['Epilogue'] py-10">
         {/* Mostrar eventos asistidos */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {eventosAsistidos.map((evento) => (
             <div key={evento.id} className="w-full h-97 border border-shadow">
               <div className="w-full min-h-9/12 h-97 px-4 py-4">
